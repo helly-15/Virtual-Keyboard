@@ -36,4 +36,28 @@ textarea {
 .pressed {
   background-color: brown;
 }
+
+.Backspace {
+  width: 7%;
+}
+
+.Capslock {
+  width: 10.5%;
+}
+
+.Space {
+  width: 42%;
+}
+
+.Ctrl {
+  width: 7%;
+}
+
+.Shift {
+  width: 10.5%;
+}
+
+.Enter {
+  width: 10.5%;
+}
 /*# sourceMappingURL=styles.css.map */

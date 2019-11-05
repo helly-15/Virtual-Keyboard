@@ -352,10 +352,10 @@ let keys = {
 
     },
     ArrowUp: {
-        EngBig: "\u2192" ,
-        EngSmall: "\u2192",
-        RusBig: "\u2192",
-        RusSmall: "\u2192",
+        EngBig: "\u2191" ,
+        EngSmall: "\u2191",
+        RusBig: "\u2191",
+        RusSmall: "\u2191",
 
     },
     ShiftRight: {
@@ -366,10 +366,10 @@ let keys = {
 
     },
     ControlLeft: {
-        EngBig: "Ctrl" ,
-        EngSmall: "Ctrl",
-        RusBig: "Ctrl",
-        RusSmall: "Ctrl",
+        EngBig: "Control" ,
+        EngSmall: "Control",
+        RusBig: "Control",
+        RusSmall: "Control",
 
     },
     MetaLeft: {
@@ -387,10 +387,10 @@ let keys = {
 
     },
     Space: {
-        EngBig: "Space " ,
-        EngSmall: "Space ",
-        RusBig: "Space ",
-        RusSmall: " Space",
+        EngBig: "Space" ,
+        EngSmall: "Space",
+        RusBig: "Space",
+        RusSmall: "Space",
 
     },
     AltRight: {
@@ -400,13 +400,7 @@ let keys = {
         RusSmall: "Alt",
 
     },
-    ControlRight: {
-        EngBig: "Ctrl" ,
-        EngSmall: "Ctrl",
-        RusBig: "Ctrl",
-        RusSmall: "Ctrl",
-
-    },
+    
     ArrowLeft: {
         EngBig: "\u2190" ,
         EngSmall: "\u2190",
@@ -428,6 +422,12 @@ let keys = {
         RusSmall: "\u2192",
 
     },
+ControlRight: {
+        EngBig: "Control" ,
+        EngSmall: "Control",
+        RusBig: "Control",
+        RusSmall: "Control",
 
+    },
 
 };
