@@ -49,12 +49,36 @@ function nameKeys(status) {
     }
   }
 };
+/**
+ * insert cursor in correct place in textarea
+ * @param {object} myField - textarea
+ * @param {string} myValue - text
+ */
+function insertAtCursor(myField, myValue) {
+  // IE support
+  if (document.selection) {
+    myField.focus();
+    sel = document.selection.createRange();
+    sel.text = myValue;
+  } else if (myField.selectionStart || myField.selectionStart == '0') {
+    const startPos = myField.selectionStart;
+    const endPos = myField.selectionEnd;
+    myField.value = myField.value.substring(0, startPos) +
+            myValue +
+            myField.value.substring(endPos, myField.value.length);
+
+    myField.selectionStart = startPos + myValue.length;
+    myField.selectionEnd = startPos + myValue.length;
+  } else {
+    myField.value += myValue;
+  }
+}
 
 for (const item of allButtons) {
   item.addEventListener('mousedown', () => {
     textarea.focus();
-    item.classList.add('pressed');
-    textarea.append(item.innerHTML);
+    item.classList.add('pressed', 'animated');
+    insertAtCursor(textarea, item.innerHTML);
     if (item.innerHTML == 'Capslock') {
       switch (defaultLang) {
         case 'EngSmall':
@@ -79,7 +103,7 @@ for (const item of allButtons) {
   });
   item.addEventListener('mouseup', () => {
     textarea.focus();
-    item.classList.remove('pressed');
+    item.classList.remove('pressed', 'animated');
   });
 };
 
@@ -90,13 +114,15 @@ for (const item of allButtons) {
 textarea.addEventListener('keydown', function(event) {
   textarea.focus();
   const pushedBut = allButtons.find((elem) => elem.innerHTML==event.key );
-  pushedBut.classList.add('pressed');
+  pushedBut.classList.add('pressed', 'animated');
+  // pushedBut.classList.add('animated');
 });
 
 textarea.addEventListener('keyup', function(event) {
   textarea.focus();
   const pushedBut = allButtons.find((elem) => elem.innerHTML==event.key );
-  pushedBut.classList.remove('pressed');
+  pushedBut.classList.remove('pressed', 'animated');
+  // pushedBut.classList.remove('animated');
 });
 
 

@@ -60,4 +60,10 @@ textarea {
 .Enter {
   width: 10.5%;
 }
+
+.animated {
+  border-radius: 50%;
+  -webkit-transition-property: border-radius;
+  transition-property: border-radius;
+}
 /*# sourceMappingURL=styles.css.map */
