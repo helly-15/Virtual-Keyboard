@@ -4,13 +4,20 @@ document.body.appendChild(textarea);
 textarea.autofocus = true;
 const table = document.createElement('table');
 document.body.append(table);
-let defaultStatus = 'EngSmall';
+
+if (sessionStorage.getItem('langMode')) {
+  defaultLang = sessionStorage.getItem('langMode');
+} else {
+  sessionStorage.setItem('langMode', 'EngSmall');
+  defaultLang = sessionStorage.getItem('langMode');
+};
 createHorisLayout(14);
 createHorisLayout(14);
 createHorisLayout(13);
 createHorisLayout(13);
 createHorisLayout(9);
-nameKeys(defaultStatus);
+nameKeys(defaultLang);
+
 const allButtonsCollection = document.getElementsByClassName(`button`);
 const allButtons = Array.prototype.slice.call( allButtonsCollection );
 /**
@@ -49,21 +56,25 @@ for (const item of allButtons) {
     item.classList.add('pressed');
     textarea.append(item.innerHTML);
     if (item.innerHTML == 'Capslock') {
-      switch (defaultStatus) {
+      switch (defaultLang) {
         case 'EngSmall':
-          defaultStatus = 'EngBig';
+          sessionStorage.setItem('langMode', 'EngBig');
+          defaultLang = sessionStorage.getItem('langMode');
           break;
         case 'EngBig':
-          defaultStatus = 'EngSmall';
+          sessionStorage.setItem('langMode', 'EngSmall');
+          defaultLang = sessionStorage.getItem('langMode');
           break;
         case 'RusBig':
-          defaultStatus = 'RusSmall';
+          sessionStorage.setItem('langMode', 'RusSmall');
+          defaultLang = sessionStorage.getItem('langMode');
           break;
         case 'RusSmall':
-          defaultStatus = 'RusBig';
+          sessionStorage.setItem('langMode', 'RusBig');
+          defaultLang = sessionStorage.getItem('langMode');
           break;
       };
-      nameKeys(defaultStatus);
+      nameKeys(defaultLang);
     };
   });
   item.addEventListener('mouseup', () => {
@@ -119,23 +130,27 @@ function assignExtraCharacteristics(button) {
 window.addEventListener('keydown', function() {
   textarea.focus();
   if (window.event.shiftKey && window.event.altKey) {
-    switch (defaultStatus) {
+    switch (defaultLang) {
       case 'EngSmall':
-        defaultStatus = 'RusSmall';
+        sessionStorage.setItem('langMode', 'RusSmall');
+        defaultLang = sessionStorage.getItem('langMode');
         break;
       case 'EngBig':
-        defaultStatus = 'RusBig';
+        sessionStorage.setItem('langMode', 'RusBig');
+        defaultLang = sessionStorage.getItem('langMode');
         break;
       case 'RusBig':
-        defaultStatus = 'EngBig';
+        sessionStorage.setItem('langMode', 'EngBig');
+        defaultLang = sessionStorage.getItem('langMode');
         break;
       case 'RusSmall':
-        defaultStatus = 'EngSmall';
+        sessionStorage.setItem('langMode', 'EngSmall');
+        defaultLang = sessionStorage.getItem('langMode');
         break;
     };
   }
 
 
-  nameKeys(defaultStatus);
+  nameKeys(defaultLang);
 },
 );
