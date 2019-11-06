@@ -1,0 +1,69 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  height: 70%;
+}
+
+td,
+th {
+  border: 1px solid black;
+  padding: 3px;
+  text-align: center;
+}
+
+th {
+  font-weight: bold;
+  background-color: #E6E6E6;
+}
+
+textarea {
+  width: 100%;
+  height: 30%;
+}
+
+.button {
+  width: 7%;
+  height: 40px;
+  background-color: blue;
+  color: white;
+}
+
+.btnHolder {
+  width: 100%;
+  height: 40px;
+}
+
+.pressed {
+  background-color: brown;
+}
+
+.Backspace {
+  width: 7%;
+}
+
+.Capslock {
+  width: 10.5%;
+}
+
+.Space {
+  width: 42%;
+}
+
+.Ctrl {
+  width: 7%;
+}
+
+.Shift {
+  width: 10.5%;
+}
+
+.Enter {
+  width: 10.5%;
+}
+
+.animated {
+  border-radius: 50%;
+  -webkit-transition-property: border-radius;
+  transition-property: border-radius;
+}
+/*# sourceMappingURL=styles.css.map */
